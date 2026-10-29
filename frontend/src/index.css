@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-navy: #0A192F;
+    --navy-light: #1E293B;
+    --teal-accent: #0D9488;
+    --teal-bright: #14B8A6;
+    --teal-light: #CCFBF1;
+    --sky-blue: #0EA5E9;
+    --sky-light: #E0F2FE;
+    --violet-accent: #8B5CF6;
+    --violet-light: #EDE9FE;
+    --coral-accent: #F43F5E;
+    --coral-light: #FFE4E6;
+    --bg-page: #F8FAFC;
+    --card-bg: #FFFFFF;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Nirmala UI', 'Noto Sans Devanagari', 'Noto Sans Kannada', 'Tunga', 'Mangal', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  #root {
+    max-width: 100% !important;
+    width: 100% !important;
+    border-inline: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =====================================================================
+   KEYFRAME ANIMATIONS & MICRO-INTERACTIONS
+   ===================================================================== */
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(-2deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px -3px rgba(14, 165, 233, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 28px 4px rgba(20, 184, 166, 0.55);
+  }
+}
+
+@keyframes quantum-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(13, 148, 136, 0);
+  }
+}
+
+@keyframes packet-flow {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes gradient-drift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Utility Animation Classes */
+.animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+.quantum-active {
+  animation: quantum-pulse 2s infinite ease-in-out;
+}
+
+.animate-packet {
+  animation: packet-flow 2.4s linear infinite;
+}
+
+/* =====================================================================
+   GLASSMORPHISM & GRADIENT SURFACES
+   ===================================================================== */
+
+.glass-nav {
+  background: rgba(10, 25, 47, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
+}
+
+.glass-card-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 20px 30px -10px rgba(10, 25, 47, 0.5);
+}
+
+.cyber-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
+}
+
+.animated-gradient-mesh {
+  background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 35%, #ecfdf5 70%, #fff1f2 100%);
+  background-size: 300% 300%;
+  animation: gradient-drift 18s ease infinite;
+}
+
+/* Accessible focus ring */
+button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #0EA5E9;
+  outline-offset: 2px;
+}

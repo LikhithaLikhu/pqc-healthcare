@@ -1,0 +1,31 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+*.local
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+env/
+venv/
+ENV/
+
+# Local Storage
+backend/local_storage/
+local_storage/
+
+# System and IDE
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db
