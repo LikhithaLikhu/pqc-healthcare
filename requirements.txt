@@ -1,0 +1,2 @@
+# Root requirements entry - delegates to backend/requirements.txt
+-r backend/requirements.txt
